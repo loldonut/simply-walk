@@ -15,3 +15,10 @@ then run it: `./main`
 `w` - Increases your `Y` value by 50.
 
 `s` - Decreases your `Y` value by 50.
+
+**You can set a new limit by doing:**
+
+`./main [new_limit]`
+
+Replace `[new_limit]` with the new limit you want. <br />
+(Cannot be negative.)
