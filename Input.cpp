@@ -1,0 +1,49 @@
+#pragma once
+#include <iostream>
+#include <ncurses.h>
+
+#include "Player.cpp"
+
+char Input()
+{
+    char res;
+    initscr();
+    cbreak();
+    res = getch();
+    std::cout << "\n";
+
+    return res;
+}
+
+void DetectMovementInput(Player& player)
+{
+    while (player.m_Y <= player.limit
+            && player.m_X <= player.limit)
+    {
+        char ch = Input();
+        endwin();
+
+        switch (ch)
+        {
+            case 119:
+                player.m_Y += 50;
+                std::cout << "\nWent Forwards (+50) ('w' key detected)" << std::endl;
+                std::cout << "New Y Value: " << player.m_Y << std::endl;
+                break;
+
+            case 115:
+                player.m_Y -= 50;
+                std::cout << "\nWent Backwards (-50) ('s' key detected)" << std::endl;
+                std::cout << "New Y Value: " << player.m_Y << std::endl;
+                break;
+        }
+
+        if (player.m_Y >= player.limit)
+        {
+            std::cout << "Limit Reached!! (Walk Limit 400)" << std::endl;
+            break;
+        }
+    }
+
+    std::cout << player.m_Y << std::endl;
+}
