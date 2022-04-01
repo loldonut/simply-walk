@@ -43,10 +43,8 @@ void DetectMovementInput(Player& player)
 
         if (player.m_Y >= player.limit)
         {
-            std::cout << "Limit Reached!! (Walk Limit 400)" << std::endl;
+            std::cout << "Limit Reached!! (Walk Limit " << player.limit << ")" << std::endl;
             break;
         }
     }
-
-    std::cout << player.m_Y << std::endl;
 }

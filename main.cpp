@@ -1,11 +1,6 @@
-#include <iostream>
-#include <ncurses.h>
+#include "Start.cpp"
 
-#include "Player.cpp"
-#include "Input.cpp"
-
-int main()
+int main(int argc, char** argv)
 {
-    Player player;
-    DetectMovementInput(player);
+    Start(argc, argv);
 }
