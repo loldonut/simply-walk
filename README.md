@@ -16,6 +16,8 @@ then run it: `./main`
 
 `s` - Decreases your `Y` value by 50.
 
+`r` - Reset the `Y` value to `0`
+
 **You can set a new limit by doing:**
 
 `./main [new_limit]`
