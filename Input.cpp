@@ -28,8 +28,7 @@ void LogMovement(bool forwards, const int newYValue)
 
 void DetectMovementInput(Player& player)
 {
-    while (player.m_Y <= player.limit
-            && player.m_X <= player.limit)
+    while (player.m_Y <= player.limit)
     {
         char ch = Input();
         endwin();
