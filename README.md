@@ -12,9 +12,9 @@ then run it: `./main`
 
 ## Controls
 
-`w` - Increases your `Y` value by 50.
+<kbd>w</kbd> - Increases your `Y` value by 50.
 
-`s` - Decreases your `Y` value by 50.
+<kbd>s</kbd> - Decreases your `Y` value by 50.
 
 <kbd>r</kbd> - Reset the `Y` value to `0`
 
