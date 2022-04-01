@@ -21,7 +21,7 @@ void LogMovement(bool forwards, const int newYValue)
 {
     std::string message = forwards == true 
         ? "\nWent Forwards (+50) ('w' key detected)"
-        : "\nWent Forwards (-50) ('s' key detected)";
+        : "\nWent Backwards (-50) ('s' key detected)";
     std::cout << message << std::endl;
     std::cout << "New Y Value: " << newYValue << std::endl;
 }
