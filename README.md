@@ -14,4 +14,4 @@ then run it: `./main`
 
 `w` - Increases your `Y` value by 50.
 
-`s` - Decreases your `X` value by 50.
+`s` - Decreases your `Y` value by 50.
