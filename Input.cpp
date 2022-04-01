@@ -10,7 +10,9 @@ char Input()
 {
     char res;
     initscr();
+
     cbreak();
+
     res = getch();
     std::cout << "\n";
 
@@ -28,7 +30,9 @@ void LogMovement(bool forwards, const int newYValue)
 
 void DetectMovementInput(Player& player)
 {
-    while (player.m_Y <= player.limit)
+    bool quit = false;
+
+    while (!quit && player.m_Y <= player.limit)
     {
         char ch = Input();
         endwin();
@@ -47,6 +51,7 @@ void DetectMovementInput(Player& player)
                 LogMovement(false, player.m_Y);
                 break;
 
+            // 114 = r (lowercase)
             case 114:
                 player.m_Y = 0;
                 std::cout << "Y Value has been reset to 0" << std::endl;
@@ -55,6 +60,8 @@ void DetectMovementInput(Player& player)
         if (player.m_Y >= player.limit)
         {
             std::cout << "Limit Reached!! (Walk Limit " << player.limit << ")" << std::endl;
+            std::cout << "\nPress Enter to Exit > ";
+            std::cin.get();
             break;
         }
     }
