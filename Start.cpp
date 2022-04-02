@@ -10,17 +10,16 @@ void Start(int argc, char** argv)
 {
     std::string WalkLimitString = argc > 1 ? argv[1] : "400";
     int WalkLimit = WalkLimitString != "400" 
-        ? stoi(WalkLimitString)
-        : 400;
+                    ? stoi(WalkLimitString)
+                    : 400;
 
     Player player;
-    if (WalkLimit != 400)
-    {
+    if (WalkLimit != 400 && WalkLimit > 0)
         player.limit = WalkLimit;
-    }
-    else if (WalkLimit < 0)
+    else 
     {
-        std::cout << "PlayerError: Walk Limit cannot be negative" << std::endl;
+        std::cerr << "PlayerError: Walk Limit cannot be negative" << std::endl;
+        return;
     }
 
     DetectMovementInput(player);
